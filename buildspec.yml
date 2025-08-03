@@ -5,4 +5,4 @@ phases:
       java: latest
   build:
     commands:
-      - mvn verify sonar:sonar -Dsonar.projectKey=AWSDevsecops -Dsonar.organization=MYX12 -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=162ea6221a5b5f86d04282312af545b0223bc82d 
+      - mvn verify sonar:sonar -Dsonar.projectKey=AWSDevsecops -Dsonar.organization=MYX12 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=162ea6221a5b5f86d04282312af545b0223bc82d 
