@@ -2,10 +2,14 @@ version: 0.2
 env:
     secrets-manager : 
       TOKEN: firstSecrect:tokenForSonar
+      SNYK_TOKEN: snykSecrect:snykSecrect
 phases:
   install:
     runtime-versions:
       java: latest
+    commands:
+      = npm install -g snyk
   build:
     commands:
       - mvn verify sonar:sonar -Dsonar.projectKey=MYX12_AWSDevsecops -Dsonar.organization=myx12 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$TOKEN 
+      - snyk test
